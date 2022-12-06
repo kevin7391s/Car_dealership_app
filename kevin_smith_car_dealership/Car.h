@@ -16,23 +16,23 @@ using namespace std;
 class Car
 {
 private:
-    string vin;
-    string make;
-    string model;
-    string category;
-    float price;
-    int year;
-    int *list;
-    Car *carlist;
+    string Vin;
+    string Make;
+    string Model;
+    string Category;
+    float Price;
+    int Year;
+    int *List;
+    Car *carList;
 
 public:
     // setters
-    void setVin(string vin);
-    void setMake(string make);
-    void setModel(string model);
-    void setCategory(string category);
-    void setPrice(float price);
-    void setYear(int year);
+    void setVin(string v);
+    void setMake(string m);
+    void setModel(string m);
+    void setCategory(string c);
+    void setPrice(float p);
+    void setYear(int y);
     
     // getters
     string getVin();
@@ -44,7 +44,7 @@ public:
     
     // constructors
     Car();
-    Car(string vin, string make, string model, string category, float price, int year);
+    Car(string Vin, string Make, string Model, string Category, float Price, int Year);
     
 };
 
