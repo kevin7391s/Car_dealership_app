@@ -6,8 +6,16 @@
 //
 
 #include <iostream>
+#include "Car.h"
+using namespace std;
 
 int main() {
-   
+    Car car1;
+    
+  
+    cout<<car1.getYear()<<endl;
+    car1.setYear(1999);
+    cout<<car1.getYear()<<endl;
+    
     return 0;
 }
