@@ -16,6 +16,8 @@ int main() {
     cout<<car1.getYear()<<endl;
     car1.setYear(1999);
     cout<<car1.getYear()<<endl;
+    car1.addCar(car1);
+    car1.loadCar();
     
     return 0;
 }

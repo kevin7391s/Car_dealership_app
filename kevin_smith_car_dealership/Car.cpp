@@ -58,6 +58,19 @@ int Car::getYear()
     return Year;
 }
 
+// function to add car to car list
+void Car::addCar(Car c)
+{
+    carList[count] = c;
+    count ++;
+}
+
+// function to show cars
+void Car::loadCar(){
+   
+    cout<< carList;
+}
+
 Car::Car()
 {
     Vin = "NA";

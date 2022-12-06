@@ -8,6 +8,7 @@
 #ifndef Car_h
 #define Car_h
 
+#include <iostream>
 #include <stdio.h>
 #include <string>
 using namespace std;
@@ -24,6 +25,7 @@ private:
     int Year;
     int *List;
     Car *carList;
+    int count;
 
 public:
     // setters
@@ -41,6 +43,11 @@ public:
     string getCategory();
     float getPrice();
     int getYear();
+    
+    // functionality
+    void addCar(Car c);
+    void loadCar();
+    
     
     // constructors
     Car();
