@@ -22,6 +22,8 @@ private:
     string category;
     float price;
     int year;
+    int *list;
+    Car *carlist;
 
 public:
     // setters
@@ -41,6 +43,8 @@ public:
     int getYear();
     
     // constructors
+    Car();
+    Car(string vin, string make, string model, string category, float price, int year);
     
 };
 
