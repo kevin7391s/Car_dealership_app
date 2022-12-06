@@ -32,36 +32,41 @@ void Car::setYear(int y)
     Year = y;
 }
 
+string Car::getVin()
+{
+    return Vin;
+}
+
+string Car::getMake()
+{
+    return Make;
+}
+string Car::getModel()
+{
+    return Model;
+}
+string Car::getCategory()
+{
+    return Category;
+}
+float Car::getPrice()
+{
+    return Price;
+}
+int Car::getYear()
+{
+    return Year;
+}
+
+Car::Car()
+{
+    Vin = "NA";
+    Make = "NA";
+    Model = "NA";
+    Category = "NA";
+    Price = 0.0;
+    Year = 0;
+}
 
 
-/* private:
-    string vin;
-    string make;
-    string model;
-    string category;
-    float price;
-    int year;
-    int *list;
-    Car *carlist;
-
-public:
-    // setters
-    void setVin(string vin);
-    void setMake(string make);
-    void setModel(string model);
-    void setCategory(string category);
-    void setPrice(float price);
-    void setYear(int year);
-    
-    // getters
-    string getVin();
-    string getMake();
-    string getModel();
-    string getCategory();
-    float getPrice();
-    int getYear();
-    
-    // constructors
-    Car();
-    Car(string vin, string make, string model, string category, float price, int year); */
     
