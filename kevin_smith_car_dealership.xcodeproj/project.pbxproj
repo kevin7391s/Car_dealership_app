@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		9ED21803293D61EE00368907 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ED21802293D61EE00368907 /* main.cpp */; };
 		9ED2180B293D628C00368907 /* Car.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ED21809293D628C00368907 /* Car.cpp */; };
+		9ED218242941829200368907 /* newCar.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9ED218222941829200368907 /* newCar.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -28,6 +29,8 @@
 		9ED21802293D61EE00368907 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9ED21809293D628C00368907 /* Car.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Car.cpp; sourceTree = "<group>"; };
 		9ED2180A293D628C00368907 /* Car.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Car.h; sourceTree = "<group>"; };
+		9ED218222941829200368907 /* newCar.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = newCar.cpp; sourceTree = "<group>"; };
+		9ED218232941829200368907 /* newCar.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = newCar.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +66,8 @@
 				9ED21802293D61EE00368907 /* main.cpp */,
 				9ED21809293D628C00368907 /* Car.cpp */,
 				9ED2180A293D628C00368907 /* Car.h */,
+				9ED218222941829200368907 /* newCar.cpp */,
+				9ED218232941829200368907 /* newCar.h */,
 			);
 			path = kevin_smith_car_dealership;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 			files = (
 				9ED2180B293D628C00368907 /* Car.cpp in Sources */,
 				9ED21803293D61EE00368907 /* main.cpp in Sources */,
+				9ED218242941829200368907 /* newCar.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
