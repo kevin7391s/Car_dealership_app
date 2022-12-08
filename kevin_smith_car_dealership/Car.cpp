@@ -7,6 +7,7 @@
 
 #include "Car.h"
 
+
 void Car::setVin(string v)
 {
     Vin = v;
@@ -59,16 +60,15 @@ int Car::getYear()
 }
 
 // function to add car to car list
-void Car::addCar(Car c)
+void Car::addCar()
 {
-    carList[count] = c;
-    count ++;
+    
 }
 
 // function to show cars
 void Car::loadCar(){
    
-    cout<< carList;
+   
 }
 
 Car::Car()
@@ -80,6 +80,8 @@ Car::Car()
     Price = 0.0;
     Year = 0;
 }
+
+
 
 
     

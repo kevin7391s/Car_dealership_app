@@ -24,8 +24,10 @@ private:
     float Price;
     int Year;
     int *List;
-    Car *carList;
+    //Car *carList;
     int count;
+    
+    
 
 public:
     // setters
@@ -45,13 +47,14 @@ public:
     int getYear();
     
     // functionality
-    void addCar(Car c);
+    void addCar();
     void loadCar();
     
     
     // constructors
     Car();
-    Car(string Vin, string Make, string Model, string Category, float Price, int Year);
+    Car(string v, string ma, string mo, string c, float p, int y);
+    ~Car()
     
 };
 
