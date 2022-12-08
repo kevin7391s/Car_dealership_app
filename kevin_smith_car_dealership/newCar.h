@@ -15,7 +15,9 @@ class newCar : public Car
 private:
     string warranty;
 public:
-    void setWarrant(string w);
+    void setWarranty(string w);
+    string getWarranty();
     newCar(string v, string ma, string mo, string c, float p, int y, string w);
+    ~newCar();
 };
 #endif /* newCar_h */

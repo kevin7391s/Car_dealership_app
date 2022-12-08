@@ -83,12 +83,12 @@ Car::Car()
 
 Car::Car(string v, string ma, string mo, string c, float p, int y)
 {
-    Vin = v;
-    Make = ma;
-    Model = mo;
-    Category = c;
-    Price = p;
-    Year = y;
+    setVin(v);
+    setMake(ma);
+    setModel(mo);
+    setCategory(c);
+    setPrice(p);
+    setYear(y);
 }
 
 Car::~Car(){
