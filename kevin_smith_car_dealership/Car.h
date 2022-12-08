@@ -54,7 +54,8 @@ public:
     // constructors
     Car();
     Car(string v, string ma, string mo, string c, float p, int y);
-    ~Car()
+    
+    ~Car();
     
 };
 

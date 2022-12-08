@@ -81,7 +81,18 @@ Car::Car()
     Year = 0;
 }
 
+Car::Car(string v, string ma, string mo, string c, float p, int y)
+{
+    Vin = v;
+    Make = ma;
+    Model = mo;
+    Category = c;
+    Price = p;
+    Year = y;
+}
 
-
+Car::~Car(){
+    
+}
 
     
