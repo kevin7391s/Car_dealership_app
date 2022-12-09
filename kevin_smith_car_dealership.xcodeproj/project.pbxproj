@@ -26,6 +26,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		9E7B9ABB2942C70400A5D97C /* File.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = File.txt; sourceTree = "<group>"; };
 		9ED217FF293D61EE00368907 /* kevin_smith_car_dealership */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = kevin_smith_car_dealership; sourceTree = BUILT_PRODUCTS_DIR; };
 		9ED21802293D61EE00368907 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		9ED21809293D628C00368907 /* Car.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Car.cpp; sourceTree = "<group>"; };
@@ -73,6 +74,7 @@
 				9ED218232941829200368907 /* newCar.h */,
 				9ED2182529418CFB00368907 /* oldCar.cpp */,
 				9ED2182629418CFB00368907 /* oldCar.h */,
+				9E7B9ABB2942C70400A5D97C /* File.txt */,
 			);
 			path = kevin_smith_car_dealership;
 			sourceTree = "<group>";
