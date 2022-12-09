@@ -59,6 +59,25 @@ int Car::getYear()
     return Year;
 }
 
+/*void Car::getCarInfo()
+{
+    cout<<"Vin = "<<endl;
+    cin>>Vin;
+    cout<<"Make = "<<endl;
+    cin>>Make;
+    cout<<"Model = "<<endl;
+    cin>>Model;
+    cout<<"Price = "<<endl;
+    cin>>Price;
+    cout<<"Year = "<<endl;
+    cin>>Year;
+    cout<<"Category = "<<endl;
+    cin>>Category;
+    
+    
+    
+}*/
+
 // function to add car to car list
 void Car::addCar()
 {

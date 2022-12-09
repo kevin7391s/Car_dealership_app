@@ -20,7 +20,34 @@ int main() {
     newCar newCar4;
     newCar newCar5;
     
-    bool running = true;
+    oldCar oldCar1;
+    oldCar oldCar2;
+    oldCar oldCar3;
+    oldCar oldCar4;
+    oldCar oldCar5;
+    
+    
+    //newCar carList[] = new {newCar1, newCar2,newCar3,newCar4,newCar5};
+    
+    newCar* newCars[20];
+
+    for(int i=0; i<20; i++)
+    {
+        newCars[i] = new newCar("NA",
+                                "NA",
+                                "NA",
+                                "NA",
+                                 0.0,
+                                  0,
+                                "NA");
+        
+        cout<<newCars[i]->getVin();
+    }
+    
+    
+  
+    
+    bool running = false;
     int i = 0;
     int user_input;
     while (running)
@@ -37,7 +64,7 @@ int main() {
             string vin;
             string model;
             string make;
-            string catergory;
+            string category;
             float price;
             int year;
             int mileage;
@@ -54,26 +81,30 @@ int main() {
             cout<<"Year = "<<endl;
             cin>>year;
             cout<<"Category = "<<endl;
-            cin>>catergory;
-            if(catergory == "new")
-            {
+            cin>>category;
+            if(category == "new"){
                 cout<<"Warranty = "<<endl;
                 cin>>warranty;
-            }
-            else if(catergory == "old")
-            {
-                cout<<"Mileage = "<<endl;
-                cin>>mileage;
-            }
-    
+                /*for(i = 0; i< sizeof(carList);i++)
+                    //cout<<carList[i]<<endl;
+                    carList[i].setVin(vin);
+                    carList[i].setMake(make);
+                    carList[i].setModel(model);
+                    carList[i].setPrice(price);
+                    carList[i].setYear(year);
+                    carList[i].setCategory(category);
+                    carList[i].setWarranty(warranty);
+                break;
+            }*/
+        
+            //cout<<"Mileage = "<<endl;
+            //cin>>mileage;
+         
             
         }
     }
-   
-    
-    
-  
-    
+    //cout<<newCar1.getVin()<<newCar1.getMake()<<newCar1.getModel();
+    }
     
     return 0;
 }

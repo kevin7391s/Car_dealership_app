@@ -48,6 +48,7 @@ public:
     int getYear();
     
     // functionality
+    void getCarInfo();
     void addCar();
     void loadCar();
     

@@ -19,6 +19,7 @@ public:
     void setMileage(int m);
     int getMileage();
     
+    oldCar();
     oldCar(string v, string ma, string mo, string c, float p, int y, int m);
     ~oldCar();
     

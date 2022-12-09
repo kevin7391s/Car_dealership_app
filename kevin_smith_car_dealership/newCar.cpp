@@ -17,6 +17,12 @@ string newCar::getWarranty()
     return warranty;
 }
 
+newCar::newCar()
+{
+    
+}
+
+
 newCar::newCar(string v, string ma, string mo, string c, float p, int y, string w):Car(v,ma,mo,c,p,y)
 {
     setWarranty(w);
