@@ -8,27 +8,70 @@
 #include <iostream>
 #include "Car.h"
 #include <fstream>
+#include "newCar.h"
+#include "oldCar.h"
 using namespace std;
 
 int main() {
-    Car car1;
     
-    ofstream MyFile;
-    MyFile.open("File.txt");
+    newCar newCar1;
+    newCar newCar2;
+    newCar newCar3;
+    newCar newCar4;
+    newCar newCar5;
     
-
-    // Write to the file
-    MyFile << "Files can be tricky, but it is fun enough!\n";
-
-    // Close the file
-    MyFile.close();
-  
-    cout<<car1.getYear()<<endl;
-    car1.setYear(1999);
-    MyFile <<car1.getYear();
+    bool running = true;
+    int i = 0;
+    int user_input;
+    while (running)
+    {
+        cout<<"1. Search Inventory"<<endl;
+        cout<<"2. Sell/Lease cars"<<endl;
+        cout<<"3. Return a leased car"<<endl;
+        cout<<"4. Add cars to inventory"<<endl;
+        cout<<"5. Exit"<<endl;
+        cin >> user_input;
+        
+        if(user_input == 4)
+        {
+            string vin;
+            string model;
+            string make;
+            string catergory;
+            float price;
+            int year;
+            int mileage;
+            string warranty;
+            
+            cout<<"Vin = "<<endl;
+            cin>>vin;
+            cout<<"Make = "<<endl;
+            cin>>make;
+            cout<<"Model = "<<endl;
+            cin>>model;
+            cout<<"Price = "<<endl;
+            cin>>price;
+            cout<<"Year = "<<endl;
+            cin>>year;
+            cout<<"Category = "<<endl;
+            cin>>catergory;
+            if(catergory == "new")
+            {
+                cout<<"Warranty = "<<endl;
+                cin>>warranty;
+            }
+            else if(catergory == "old")
+            {
+                cout<<"Mileage = "<<endl;
+                cin>>mileage;
+            }
+    
+            
+        }
+    }
+   
     
     
-    //MyFile <<"Hellowordl";
   
     
     

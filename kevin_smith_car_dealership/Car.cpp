@@ -62,6 +62,14 @@ int Car::getYear()
 // function to add car to car list
 void Car::addCar()
 {
+    ofstream MyFile;
+    MyFile.open("File.txt");
+    MyFile << getVin();
+    MyFile << getMake();
+    MyFile << getModel();
+    MyFile << getCategory();
+    MyFile << getPrice();
+    MyFile << getYear();
     
 }
 
