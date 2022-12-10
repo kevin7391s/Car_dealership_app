@@ -13,7 +13,7 @@
 using namespace std;
 
 int main() {
-    
+    /*
     newCar newCar1;
     newCar newCar2;
     newCar newCar3;
@@ -24,30 +24,13 @@ int main() {
     oldCar oldCar2;
     oldCar oldCar3;
     oldCar oldCar4;
-    oldCar oldCar5;
+    oldCar oldCar5;*/
     
     
     //newCar carList[] = new {newCar1, newCar2,newCar3,newCar4,newCar5};
+    newCar* newCars[5];
     
-    newCar* newCars[20];
-
-    for(int i=0; i<20; i++)
-    {
-        newCars[i] = new newCar("NA",
-                                "NA",
-                                "NA",
-                                "NA",
-                                 0.0,
-                                  0,
-                                "NA");
-        
-        cout<<newCars[i]->getVin();
-    }
-    
-    
-  
-    
-    bool running = false;
+    bool running = true;
     int i = 0;
     int user_input;
     while (running)
@@ -85,26 +68,25 @@ int main() {
             if(category == "new"){
                 cout<<"Warranty = "<<endl;
                 cin>>warranty;
-                /*for(i = 0; i< sizeof(carList);i++)
-                    //cout<<carList[i]<<endl;
-                    carList[i].setVin(vin);
-                    carList[i].setMake(make);
-                    carList[i].setModel(model);
-                    carList[i].setPrice(price);
-                    carList[i].setYear(year);
-                    carList[i].setCategory(category);
-                    carList[i].setWarranty(warranty);
-                break;
-            }*/
-        
-            //cout<<"Mileage = "<<endl;
-            //cin>>mileage;
-         
-            
+                
+                
+                for(int i=0; i<5; i++)
+                {
+                    newCars[i] = new newCar(vin,make,model,category,price,year,warranty);
+                                        
+                    //cout<<newCars[i]->getVin();
+                    break;
+                }
         }
     }
+    
+        if (user_input == 5){
+            running = false;
+        }
     //cout<<newCar1.getVin()<<newCar1.getMake()<<newCar1.getModel();
     }
+    
+    newCars[0]->addCar();
     
     return 0;
 }
