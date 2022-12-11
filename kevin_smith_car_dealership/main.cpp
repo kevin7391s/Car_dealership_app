@@ -75,7 +75,7 @@ int main() {
                     newCars[i] = new newCar(vin,make,model,category,price,year,warranty);
                     //cout<<newCars[i]->getVin();
                     i +=1;
-                    newCars[i]->addCar();
+                    //newCars[i]->addCar();
                     break;
                 }
             }
@@ -86,7 +86,7 @@ int main() {
                 {
                     oldCars[k] = new oldCar(vin,make,model,category,price,year,mileage);
                     i+=1;
-                    oldCars[k]->addCar();
+                    //oldCars[k]->addCar();
                     //cout<<newCars[i]->getVin();
                     break;
                 }
@@ -97,10 +97,12 @@ int main() {
         if (user_input == 5){
             running = false;
         }
+    
     //cout<<newCar1.getVin()<<newCar1.getMake()<<newCar1.getModel();
     }
     
-    
+    newCars[i]->addCar();
+    oldCars[k]->addCar();
     
     return 0;
 }

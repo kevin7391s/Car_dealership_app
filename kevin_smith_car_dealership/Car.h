@@ -49,7 +49,7 @@ public:
     
     // functionality
     void getCarInfo();
-    void addCar();
+    void virtual addCar();
     void loadCar();
     
     
