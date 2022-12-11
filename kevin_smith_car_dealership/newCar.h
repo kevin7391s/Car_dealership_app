@@ -17,6 +17,8 @@ private:
 public:
     void setWarranty(string w);
     string getWarranty();
+    void addCar();
+    
     newCar();
     newCar(string v, string ma, string mo, string c, float p, int y, string w);
     ~newCar();

@@ -17,6 +17,22 @@ string newCar::getWarranty()
     return warranty;
 }
 
+// function to add car to car list
+void newCar::addCar()
+{
+    ofstream MyFile;
+    MyFile.open("newCars.txt");
+    MyFile << getVin();
+    MyFile << getMake();
+    MyFile << getModel();
+    MyFile << getCategory();
+    MyFile << getPrice();
+    MyFile << getYear();
+    MyFile << getWarranty();
+    
+}
+
+
 newCar::newCar()
 {
     
