@@ -17,7 +17,10 @@ int main() {
     newCar* newCars[5];
     oldCar* oldCars[5];
     
+        
     bool running = true;
+    int newcounter = 0;
+    int oldcounter = 0;
     int i = 0;
     int k = 0;
     int user_input;
@@ -56,6 +59,8 @@ int main() {
             if(category == "new"){
                 cout<<"Warranty = "<<endl;
                 cin>>warranty;
+                newcounter ++;
+                
                 
                 for(i=0; i<5; i++)
                 {
@@ -94,13 +99,13 @@ int main() {
     //cout<<newCar1.getVin()<<newCar1.getMake()<<newCar1.getModel();
     }
     
-    if(sizeof(newCars) > 0){
-        for(int b = 0; b < sizeof(newCars);b++){
+    if(newcounter > 0){
+        for(int b = 0; b < newcounter; b++){
             newCars[b]->addCar();
         }
     }
-    if(sizeof(oldCars)>0){
-    for(int n = 0; n < sizeof(oldCars);n++){
+    if(oldcounter>0){
+    for(int n = 0; n < oldcounter; n++){
         oldCars[n]->addCar();
         }
     }

@@ -64,7 +64,7 @@ int Car::getYear()
 void Car::addCar()
 {
     ofstream MyFile;
-    MyFile.open("File.txt");
+    MyFile.open("File.txt", ofstream::app);
     MyFile << getVin();
     MyFile << getMake();
     MyFile << getModel();

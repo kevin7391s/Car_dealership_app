@@ -21,7 +21,7 @@ string newCar::getWarranty()
 void newCar::addCar()
 {
     ofstream MyFile;
-    MyFile.open("newCars.txt");
+    MyFile.open("newCars.txt", ofstream::app);
     MyFile << getVin();
     MyFile << getMake();
     MyFile << getModel();
