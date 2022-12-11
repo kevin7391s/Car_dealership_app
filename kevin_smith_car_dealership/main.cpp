@@ -13,21 +13,7 @@
 using namespace std;
 
 int main() {
-    /*
-    newCar newCar1;
-    newCar newCar2;
-    newCar newCar3;
-    newCar newCar4;
-    newCar newCar5;
-    
-    oldCar oldCar1;
-    oldCar oldCar2;
-    oldCar oldCar3;
-    oldCar oldCar4;
-    oldCar oldCar5;*/
-    
-    
-    //newCar carList[] = new {newCar1, newCar2,newCar3,newCar4,newCar5};
+ 
     newCar* newCars[5];
     oldCar* oldCars[5];
     
@@ -70,16 +56,17 @@ int main() {
             if(category == "new"){
                 cout<<"Warranty = "<<endl;
                 cin>>warranty;
+                
                 for(i=0; i<5; i++)
                 {
                     newCars[i] = new newCar(vin,make,model,category,price,year,warranty);
                     //cout<<newCars[i]->getVin();
-                    newCars[0]->addCar();
+                    //newCars[i]->addCar();
                     i +=1;
                     cout<<i;
                     //newCars[i]->addCar();
-                    break;
                 }
+                
             }
             if(category == "old"){
                 cout<<"Mileage = "<<endl;
@@ -87,12 +74,11 @@ int main() {
                 for(k=0; k<5; k++)
                 {
                     oldCars[k] = new oldCar(vin,make,model,category,price,year,mileage);
-                    oldCars[0]->addCar();
+                    //oldCars[k]->addCar();
                     k+=1;
                     //oldCars[k]->addCar();
                     //cout<<newCars[i]->getVin();
                     
-                    break;
                 }
             }
             
@@ -101,12 +87,23 @@ int main() {
         if (user_input == 5){
             running = false;
         }
+        
+        
+            
     
     //cout<<newCar1.getVin()<<newCar1.getMake()<<newCar1.getModel();
     }
     
-    
-    
+    if(sizeof(newCars) > 0){
+        for(int b = 0; b < sizeof(newCars);b++){
+            newCars[b]->addCar();
+        }
+    }
+    if(sizeof(oldCars)>0){
+    for(int n = 0; n < sizeof(oldCars);n++){
+        oldCars[n]->addCar();
+        }
+    }
     
     return 0;
 }

@@ -29,7 +29,7 @@ void newCar::addCar()
     MyFile << getPrice();
     MyFile << getYear();
     MyFile << getWarranty();
-    
+    MyFile << "\n";
 }
 
 
