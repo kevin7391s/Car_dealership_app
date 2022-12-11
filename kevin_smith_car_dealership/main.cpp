@@ -29,9 +29,11 @@ int main() {
     
     //newCar carList[] = new {newCar1, newCar2,newCar3,newCar4,newCar5};
     newCar* newCars[5];
+    oldCar* oldCars[5];
     
     bool running = true;
     int i = 0;
+    int k = 0;
     int user_input;
     while (running)
     {
@@ -68,16 +70,28 @@ int main() {
             if(category == "new"){
                 cout<<"Warranty = "<<endl;
                 cin>>warranty;
-                
-                
-                for(int i=0; i<5; i++)
+                for(i=0; i<5; i++)
                 {
                     newCars[i] = new newCar(vin,make,model,category,price,year,warranty);
-                                        
+                    //cout<<newCars[i]->getVin();
+                    i +=1;
+                    newCars[i]->addCar();
+                    break;
+                }
+            }
+            if(category == "old"){
+                cout<<"Mileage = "<<endl;
+                cin>>mileage;
+                for(k=0; k<5; i++)
+                {
+                    oldCars[k] = new oldCar(vin,make,model,category,price,year,mileage);
+                    i+=1;
+                    oldCars[k]->addCar();
                     //cout<<newCars[i]->getVin();
                     break;
                 }
-        }
+            }
+            
     }
     
         if (user_input == 5){
@@ -86,7 +100,7 @@ int main() {
     //cout<<newCar1.getVin()<<newCar1.getMake()<<newCar1.getModel();
     }
     
-    newCars[0]->addCar();
+    
     
     return 0;
 }
