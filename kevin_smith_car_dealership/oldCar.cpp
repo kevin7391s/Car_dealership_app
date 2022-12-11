@@ -17,6 +17,21 @@ int oldCar::getMileage()
     return mileage;
 }
 
+void oldCar::addCar()
+{
+    ofstream MyFile;
+    MyFile.open("oldCar.txt");
+    MyFile << getVin();
+    MyFile << getMake();
+    MyFile << getModel();
+    MyFile << getCategory();
+    MyFile << getPrice();
+    MyFile << getYear();
+    
+}
+
+
+
 oldCar::oldCar()
 {
     

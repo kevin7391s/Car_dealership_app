@@ -71,7 +71,6 @@ void Car::addCar()
     MyFile << getCategory();
     MyFile << getPrice();
     MyFile << getYear();
-    my
     
 }
 

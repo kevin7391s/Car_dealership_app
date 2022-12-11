@@ -74,7 +74,9 @@ int main() {
                 {
                     newCars[i] = new newCar(vin,make,model,category,price,year,warranty);
                     //cout<<newCars[i]->getVin();
+                    newCars[0]->addCar();
                     i +=1;
+                    cout<<i;
                     //newCars[i]->addCar();
                     break;
                 }
@@ -82,12 +84,14 @@ int main() {
             if(category == "old"){
                 cout<<"Mileage = "<<endl;
                 cin>>mileage;
-                for(k=0; k<5; i++)
+                for(k=0; k<5; k++)
                 {
                     oldCars[k] = new oldCar(vin,make,model,category,price,year,mileage);
-                    i+=1;
+                    oldCars[0]->addCar();
+                    k+=1;
                     //oldCars[k]->addCar();
                     //cout<<newCars[i]->getVin();
+                    
                     break;
                 }
             }
@@ -101,8 +105,8 @@ int main() {
     //cout<<newCar1.getVin()<<newCar1.getMake()<<newCar1.getModel();
     }
     
-    newCars[i]->addCar();
-    oldCars[k]->addCar();
+    
+    
     
     return 0;
 }
