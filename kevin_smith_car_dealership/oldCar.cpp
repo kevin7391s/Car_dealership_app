@@ -27,6 +27,8 @@ void oldCar::addCar()
     MyFile << getCategory();
     MyFile << getPrice();
     MyFile << getYear();
+    MyFile << getMileage();
+    MyFile << ("\n");
     
 }
 

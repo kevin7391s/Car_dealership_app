@@ -76,7 +76,9 @@ void Car::addCar()
 
 // function to show cars
 void Car::loadCar(){
-   
+    string myText;
+    fstream MyReadFile("File.txt");
+
    
 }
 
