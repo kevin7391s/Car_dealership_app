@@ -52,6 +52,15 @@ int main() {
             
         }
         if(user_input == 2){
+            string categoryinput;
+            //cout<<"Enter the category you would like to search for (new or old)";
+            //cin>>categoryinput;
+            string newsearchCat;
+            string newsearch;
+            cout<<"Would you like to search by make, model, or warranty: ";
+            cin>>newsearchCat;
+            cout<<"Enter the "<<newsearchCat<<": ";
+            cin>>newsearch;
             string newcarText;
             string newCarWords[7];
             string seperatedwords[80];
@@ -64,24 +73,33 @@ int main() {
                 stringloop1 ++;
             }
             int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
-            int wordcounter = 0;
+            
             for(int arrnum = 0; arrnum<size;arrnum++)
             {
                 //cout<<newCarWords[arrnum]<<endl;
                 istringstream ss(newCarWords[arrnum]);
                 string word;
-                
+                int wordcounter = 0;
                 while(ss >> word)
                 {
                     seperatedwords[wordcounter] = word;
                     wordcounter++;
+                    if(newsearch == seperatedwords[wordcounter])
+                    {
+                        cout<<newCarWords[arrnum]<<endl;
+                    }
+                   
                 }
+               
             }
             int wordsize = sizeof(seperatedwords)/sizeof(seperatedwords[0]);
-            for(int wordnum = 0; wordnum< wordsize; wordnum++)
-            {
-                cout<<seperatedwords[wordnum]<<endl;
-            }
+//            for(int wordnum = 0; wordnum< wordsize; wordnum++)
+//            {
+//                //cout<<seperatedwords[wordnum]<<endl;
+//                if(newsearch == seperatedwords[wordnum]){
+//                    cout<<"YESSSSSS";
+//                }
+//            }
         }
         
         // add cars to file
