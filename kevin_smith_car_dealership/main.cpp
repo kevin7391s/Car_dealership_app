@@ -63,7 +63,7 @@ int main() {
             cin>>categoryinput;
             cout<<"Enter make: ";
             cin>>newmake;
-            cout<<"Enter model";
+            cout<<"Enter model: ";
             cin>>newmodel;
             
             if(categoryinput == "new")
@@ -117,9 +117,11 @@ int main() {
                 cout<<"Warranty = ";
                 cin>>warranty;
                 newcounter ++;
-                for(i=0; i<5; i++)
+                for(i=0; i<1; i++)
                 {
                     newCars[i] = new newCar(vin,make,model,category,price,year,warranty);
+                    newCars[i]->addCar();
+                    delete newCars[i];
                 }
             }
             
@@ -128,9 +130,12 @@ int main() {
                 cout<<"Mileage = ";
                 cin>>mileage;
                 oldcounter ++;
-                for(k=0; k<5; k++)
+                for(k=0; k<1; k++)
                 {
                     oldCars[k] = new oldCar(vin,make,model,category,price,year,mileage);
+                    oldCars[k]->addCar();
+                    delete oldCars[k];
+                    
                 }
             }
             
@@ -145,18 +150,18 @@ int main() {
     }
     
     // These 2 if statements used to add more than one car to file during loop
-    if(newcounter > 0){
-        for(int b = 0; b <= newcounter; b++){
-            newCars[b]->addCar();
-            delete newCars[b];
-        }
-    }
-    if(oldcounter>0){
-    for(int n = 0; n <= oldcounter; n++){
-        oldCars[n]->addCar();
-        delete oldCars[n];
-        }
-    }
+//    if(newcounter > 0){
+//        for(int b = 0; b <= 1; b++){
+//            newCars[b]->addCar();
+//            delete newCars[b];
+//        }
+//    }
+//    if(oldcounter>0){
+//    for(int n = 0; n <= 1; n++){
+//        oldCars[n]->addCar();
+//        delete oldCars[n];
+//        }
+//    }
     
     
     return 0;
