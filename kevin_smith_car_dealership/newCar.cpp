@@ -19,12 +19,22 @@ string newCar::getWarranty()
 
 void newCar::loadCar()
 {
-    string carText;
-    fstream MyReadFile("newCars.txt");
+    string newcarText;
+    string newCarWords[7];
+    fstream MyReadFile1("newCars.txt");
+    int stringloop1 = 0;
     
-    while (getline (MyReadFile, carText)) {
-      // Output the text from the file
-      cout << carText;
+    cout<<"New Cars"<<endl;
+    cout<<"-------------------------------------------------"<<endl;
+    while (! MyReadFile1.eof()) {
+        getline (MyReadFile1, newcarText);
+        newCarWords[stringloop1] = newcarText;
+        stringloop1 ++;
+    }
+    int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
+    for(int arrnum = 0; arrnum<size;arrnum++)
+    {
+        cout<<newCarWords[arrnum]<<endl;
     }
 }
 
@@ -33,13 +43,13 @@ void newCar::addCar()
 {
     ofstream MyFile;
     MyFile.open("newCars.txt", ofstream::app);
-    MyFile << getVin();
-    MyFile << getMake();
-    MyFile << getModel();
-    MyFile << getCategory();
-    MyFile << getPrice();
-    MyFile << getYear();
-    MyFile << getWarranty();
+    MyFile << getVin()<<" ";
+    MyFile << getMake()<<" ";
+    MyFile << getModel()<<" ";
+    MyFile << getCategory()<<" ";
+    MyFile << getPrice()<<" ";
+    MyFile << getYear()<<" ";
+    MyFile << getWarranty()<<" ";
     MyFile << "\n";
 }
 

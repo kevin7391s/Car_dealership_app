@@ -36,29 +36,32 @@ int main() {
         cout<<"3. Sell/Lease cars"<<endl;
         cout<<"4. Return a leased car"<<endl;
         cout<<"5. Add cars to inventory"<<endl;
-        cout<<"5. Exit"<<endl;
+        cout<<"6. Exit"<<endl;
+        cout<<"Enter input: ";
         cin >> user_input;
         
         // function used to load cars
         if(user_input == 1)
         {
             
-            string carText;
-            string newCarWords[5];
-            fstream MyReadFile("newCars.txt");
-            int stringloop = 0;
-            
-            
-            while (! MyReadFile.eof()) {
-                getline (MyReadFile, carText);
-                newCarWords[stringloop] = carText;
-                stringloop ++;
-            }
-            int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
-            for(int arrnum = 0; arrnum<size;arrnum++)
-            {
-                cout<<newCarWords[arrnum]<<endl;
-            }
+            newCar1.loadCar();
+            oldCar1.loadCar();
+//            string carText;
+//            string newCarWords[5];
+//            fstream MyReadFile("newCars.txt");
+//            int stringloop = 0;
+//
+//
+//            while (! MyReadFile.eof()) {
+//                getline (MyReadFile, carText);
+//                newCarWords[stringloop] = carText;
+//                stringloop ++;
+//            }
+//            int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
+//            for(int arrnum = 0; arrnum<size;arrnum++)
+//            {
+//                cout<<newCarWords[arrnum]<<endl;
+//            }
             
         }
         
@@ -76,22 +79,22 @@ int main() {
             int mileage;
             string warranty;
             
-            cout<<"Vin = "<<endl;
+            cout<<"Vin = ";
             cin>>vin;
-            cout<<"Make = "<<endl;
+            cout<<"Make = ";
             cin>>make;
-            cout<<"Model = "<<endl;
+            cout<<"Model = ";
             cin>>model;
-            cout<<"Price = "<<endl;
+            cout<<"Price = ";
             cin>>price;
-            cout<<"Year = "<<endl;
+            cout<<"Year = ";
             cin>>year;
-            cout<<"Category = "<<endl;
+            cout<<"Category = ";
             cin>>category;
         
             // accept warranty and add car to newcar file
             if(category == "new"){
-                cout<<"Warranty = "<<endl;
+                cout<<"Warranty = ";
                 cin>>warranty;
                 newcounter ++;
                 for(i=0; i<5; i++)
@@ -102,7 +105,7 @@ int main() {
             
             // accept mileage and accept and add to oldcar file
             if(category == "old"){
-                cout<<"Mileage = "<<endl;
+                cout<<"Mileage = ";
                 cin>>mileage;
                 oldcounter ++;
                 for(k=0; k<5; k++)
