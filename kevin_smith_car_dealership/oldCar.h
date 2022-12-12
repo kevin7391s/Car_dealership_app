@@ -20,7 +20,7 @@ public:
     int getMileage();
     void addCar();
     void loadCar();
-    void searchCar(string ma, string mo, int mi);
+    void searchCar(string ma, string mo, string mi);
     
     oldCar();
     oldCar(string v, string ma, string mo, string c, float p, int y, int m);

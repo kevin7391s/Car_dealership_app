@@ -54,18 +54,12 @@ int main() {
         }
         if(user_input == 2){
             string categoryinput;
-            string dummy1;
-            string dummy2;
-            //cout<<"Enter the category you would like to search for (new or old)";
-            //cin>>categoryinput;
-            cout<<"Enter make:";
-            cin>>dummy1;
-            cout<<"entermodel";
-            cin>>dummy2;
+            cout<<"Enter the category you would like to search for (new or old)";
+            cin>>categoryinput;
             
-            car1.searchCar(dummy1,dummy2);
+           
             
-//
+
         }
         
         // add cars to file

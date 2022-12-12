@@ -76,6 +76,7 @@ void newCar::searchCar(string ma, string mo, string wa)
         string word;
         bool isMakeTrue = false;
         bool isModelTrue = false;
+        bool isWarrantyTrue = false;
         int wordcounter3 = 0;
         while(ss >> word)
         {
@@ -90,11 +91,15 @@ void newCar::searchCar(string ma, string mo, string wa)
             {
                 isModelTrue = true;
             }
+            if(wa == seperatedwords3[wordcounter3])
+            {
+                isWarrantyTrue = true;
+            }
         }
-        if(isMakeTrue && isModelTrue){
+        if(isMakeTrue && isModelTrue && isWarrantyTrue){
             cout<<newCarWords3[arrnum - 1]<<endl;
         }
-        if(isMakeTrue != true || isModelTrue != true)
+        if(isMakeTrue != true || isModelTrue != true || isWarrantyTrue != true)
         {
             cout<<"-"<<endl;
         }
