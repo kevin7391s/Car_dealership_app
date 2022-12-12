@@ -52,7 +52,7 @@ public:
     // functionality
     void getCarInfo();
     void virtual addCar();
-    void loadCar();
+    void virtual loadCar();
     
     
     // constructors

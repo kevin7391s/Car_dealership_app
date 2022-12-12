@@ -17,6 +17,17 @@ string newCar::getWarranty()
     return warranty;
 }
 
+void newCar::loadCar()
+{
+    string carText;
+    fstream MyReadFile("File.txt");
+    
+    while (getline (MyReadFile, carText)) {
+      // Output the text from the file
+      cout << carText;
+    }
+}
+
 // function to add car to car list
 void newCar::addCar()
 {

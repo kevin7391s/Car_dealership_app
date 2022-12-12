@@ -76,8 +76,13 @@ void Car::addCar()
 
 // function to show cars
 void Car::loadCar(){
-    string myText;
+    string carText;
     fstream MyReadFile("File.txt");
+    
+    while (getline (MyReadFile, carText)) {
+      // Output the text from the file
+      cout << carText;
+    }
 
    
 }
