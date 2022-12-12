@@ -76,6 +76,7 @@ int main() {
             if(category == "old"){
                 cout<<"Mileage = "<<endl;
                 cin>>mileage;
+                oldcounter ++;
                 for(k=0; k<5; k++)
                 {
                     oldCars[k] = new oldCar(vin,make,model,category,price,year,mileage);
@@ -100,13 +101,15 @@ int main() {
     }
     
     if(newcounter > 0){
-        for(int b = 0; b < newcounter; b++){
+        for(int b = 0; b <= newcounter; b++){
             newCars[b]->addCar();
+            delete newCars[b];
         }
     }
     if(oldcounter>0){
-    for(int n = 0; n < oldcounter; n++){
+    for(int n = 0; n <= oldcounter; n++){
         oldCars[n]->addCar();
+        delete oldCars[n];
         }
     }
     
