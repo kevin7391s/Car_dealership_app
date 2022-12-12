@@ -10,6 +10,9 @@
 #include <fstream>
 #include "newCar.h"
 #include "oldCar.h"
+#include <sstream>
+
+
 using namespace std;
 
 int main() {
@@ -46,23 +49,39 @@ int main() {
             
             newCar1.loadCar();
             oldCar1.loadCar();
-//            string carText;
-//            string newCarWords[5];
-//            fstream MyReadFile("newCars.txt");
-//            int stringloop = 0;
-//
-//
-//            while (! MyReadFile.eof()) {
-//                getline (MyReadFile, carText);
-//                newCarWords[stringloop] = carText;
-//                stringloop ++;
-//            }
-//            int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
-//            for(int arrnum = 0; arrnum<size;arrnum++)
-//            {
-//                cout<<newCarWords[arrnum]<<endl;
-//            }
             
+        }
+        if(user_input == 2){
+            string newcarText;
+            string newCarWords[7];
+            string seperatedwords[80];
+            fstream MyReadFile1("newCars.txt");
+            int stringloop1 = 0;
+            
+            while (! MyReadFile1.eof()) {
+                getline (MyReadFile1, newcarText);
+                newCarWords[stringloop1] = newcarText;
+                stringloop1 ++;
+            }
+            int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
+            int wordcounter = 0;
+            for(int arrnum = 0; arrnum<size;arrnum++)
+            {
+                //cout<<newCarWords[arrnum]<<endl;
+                istringstream ss(newCarWords[arrnum]);
+                string word;
+                
+                while(ss >> word)
+                {
+                    seperatedwords[wordcounter] = word;
+                    wordcounter++;
+                }
+            }
+            int wordsize = sizeof(seperatedwords)/sizeof(seperatedwords[0]);
+            for(int wordnum = 0; wordnum< wordsize; wordnum++)
+            {
+                cout<<seperatedwords[wordnum]<<endl;
+            }
         }
         
         // add cars to file
