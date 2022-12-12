@@ -20,6 +20,7 @@ int main() {
     newCar* newCars[5];
     oldCar* oldCars[5];
     
+    Car car1;
     newCar newCar1;
     oldCar oldCar1;
     
@@ -53,43 +54,13 @@ int main() {
         }
         if(user_input == 2){
             string categoryinput;
+            string dummy1;
+            string dummy2;
             //cout<<"Enter the category you would like to search for (new or old)";
             //cin>>categoryinput;
-            string newsearchCat;
-            string newsearch;
-            cout<<"Would you like to search by make, model, or warranty: ";
-            cin>>newsearchCat;
-            cout<<"Enter the "<<newsearchCat<<": ";
-            cin>>newsearch;
-            string newcarText;
-            string newCarWords[7];
-            string seperatedwords[80];
-            fstream MyReadFile1("newCars.txt");
-            int stringloop1 = 0;
+            cout<<"Enter make:"
             
-            while (! MyReadFile1.eof()) {
-                getline (MyReadFile1, newcarText);
-                newCarWords[stringloop1] = newcarText;
-                stringloop1 ++;
-            }
-            int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
-            
-            for(int arrnum = 0; arrnum<size;arrnum++)
-            {
-                //cout<<newCarWords[arrnum]<<endl;
-                istringstream ss(newCarWords[arrnum]);
-                string word;
-                int wordcounter = 0;
-                while(ss >> word)
-                {
-                    seperatedwords[wordcounter] = word;
-                    wordcounter++;
-                    if(newsearch == seperatedwords[wordcounter])
-                    {
-                        cout<<newCarWords[arrnum]<<endl;
-                    }
-                }
-            }
+//
         }
         
         // add cars to file

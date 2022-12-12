@@ -12,6 +12,7 @@
 #include <stdio.h>
 #include <string>
 #include <fstream>
+#include <sstream>
 
 
 using namespace std;
@@ -31,6 +32,7 @@ private:
     int count;
     
     
+    
 
 public:
     // setters
@@ -40,6 +42,7 @@ public:
     void setCategory(string c);
     void setPrice(float p);
     void setYear(int y);
+    
     
     // getters
     string getVin();
@@ -53,7 +56,7 @@ public:
     void getCarInfo();
     void virtual addCar();
     void virtual loadCar();
-    void virtual searchCar();
+    void virtual searchCar(string ma,string mo);
     
     
     // constructors

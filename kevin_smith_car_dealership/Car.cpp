@@ -83,8 +83,44 @@ void Car::loadCar(){
       // Output the text from the file
       cout << carText;
     }
-
-   
+}
+void Car::searchCar(string ma, string mo)
+{
+    string newcarText;
+    string newCarWords[7];
+    string seperatedwords[80];
+    fstream MyReadFile1("File.txt");
+    int stringloop1 = 0;
+    
+    while (! MyReadFile1.eof()) {
+        getline (MyReadFile1, newcarText);
+        newCarWords[stringloop1] = newcarText;
+        stringloop1 ++;
+    }
+    int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
+    
+    for(int arrnum = 0; arrnum<size;arrnum++)
+    {
+        //cout<<newCarWords[arrnum]<<endl;
+        istringstream ss(newCarWords[arrnum]);
+        string word;
+        bool isSearchTrue = false;
+        int wordcounter = 0;
+        while(ss >> word)
+        {
+            seperatedwords[wordcounter] = word;
+            wordcounter++;
+            if(ma == seperatedwords[wordcounter] && mo == seperatedwords[wordcounter])
+            {
+                cout<<newCarWords[arrnum]<<endl;
+                isSearchTrue = true;
+            }
+        }
+        if(isSearchTrue != true)
+        {
+            cout<<"No search found"<<endl;
+        }
+    }
 }
 
 Car::Car()
