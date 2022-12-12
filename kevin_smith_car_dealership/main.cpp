@@ -29,13 +29,17 @@ int main() {
     int user_input;
     while (running)
     {
-        cout<<"1. Search Inventory"<<endl;
-        cout<<"2. Sell/Lease cars"<<endl;
-        cout<<"3. Return a leased car"<<endl;
-        cout<<"4. Add cars to inventory"<<endl;
+        
+        // main menu
+        cout<<"1. Load Cars"<<endl;
+        cout<<"2. Search Inventory"<<endl;
+        cout<<"3. Sell/Lease cars"<<endl;
+        cout<<"4. Return a leased car"<<endl;
+        cout<<"5. Add cars to inventory"<<endl;
         cout<<"5. Exit"<<endl;
         cin >> user_input;
         
+        // function used to load cars
         if(user_input == 1)
         {
             
@@ -48,7 +52,6 @@ int main() {
             while (! MyReadFile.eof()) {
                 getline (MyReadFile, carText);
                 newCarWords[stringloop] = carText;
-                //cout<<newCarWords[stringloop];
                 stringloop ++;
             }
             int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
@@ -59,8 +62,11 @@ int main() {
             
         }
         
-        if(user_input == 4)
+        // add cars to file
+        if(user_input == 5)
         {
+            
+            // create variables and add new or old car depending on user input
             string vin;
             string model;
             string make;
@@ -82,22 +88,19 @@ int main() {
             cin>>year;
             cout<<"Category = "<<endl;
             cin>>category;
+        
+            // accept warranty and add car to newcar file
             if(category == "new"){
                 cout<<"Warranty = "<<endl;
                 cin>>warranty;
                 newcounter ++;
-                
-                
                 for(i=0; i<5; i++)
                 {
                     newCars[i] = new newCar(vin,make,model,category,price,year,warranty);
-                    //cout<<newCars[i]->getVin();
-                    //newCars[i]->addCar();
-                    cout<<i;
-                    //newCars[i]->addCar();
                 }
-                
             }
+            
+            // accept mileage and accept and add to oldcar file
             if(category == "old"){
                 cout<<"Mileage = "<<endl;
                 cin>>mileage;
@@ -105,25 +108,20 @@ int main() {
                 for(k=0; k<5; k++)
                 {
                     oldCars[k] = new oldCar(vin,make,model,category,price,year,mileage);
-                    //oldCars[k]->addCar();
-                    //oldCars[k]->addCar();
-                    //cout<<newCars[i]->getVin();
-                    
                 }
             }
             
         }
     
-        if (user_input == 5){
+        // break loop and end program
+        if (user_input == 6){
             running = false;
         }
         
         
-            
-    
-    //cout<<newCar1.getVin()<<newCar1.getMake()<<newCar1.getModel();
     }
     
+    // These 2 if statements used to add more than one car to file during loop
     if(newcounter > 0){
         for(int b = 0; b <= newcounter; b++){
             newCars[b]->addCar();
