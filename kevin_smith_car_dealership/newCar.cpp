@@ -20,7 +20,7 @@ string newCar::getWarranty()
 void newCar::loadCar()
 {
     string carText;
-    fstream MyReadFile("File.txt");
+    fstream MyReadFile("newCars.txt");
     
     while (getline (MyReadFile, carText)) {
       // Output the text from the file

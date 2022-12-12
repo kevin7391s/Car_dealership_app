@@ -17,6 +17,9 @@ int main() {
     newCar* newCars[5];
     oldCar* oldCars[5];
     
+    newCar newCar1;
+    oldCar oldCar1;
+    
         
     bool running = true;
     int newcounter = 0;
@@ -32,6 +35,25 @@ int main() {
         cout<<"4. Add cars to inventory"<<endl;
         cout<<"5. Exit"<<endl;
         cin >> user_input;
+        
+        if(user_input == 1)
+        {
+            
+            string carText;
+            string newCarWords[100];
+            fstream MyReadFile("newCars.txt");
+            int stringloop = 0;
+            
+            while (! MyReadFile.eof()) {
+                getline (MyReadFile, carText);
+                newCarWords[stringloop] = carText;
+                //cout<<newCarWords[stringloop];
+                stringloop ++;
+            }
+            cout<<newCarWords[0]<<endl;
+            cout<<newCarWords[1]<<endl;
+            
+        }
         
         if(user_input == 4)
         {
@@ -67,7 +89,6 @@ int main() {
                     newCars[i] = new newCar(vin,make,model,category,price,year,warranty);
                     //cout<<newCars[i]->getVin();
                     //newCars[i]->addCar();
-                    i +=1;
                     cout<<i;
                     //newCars[i]->addCar();
                 }
@@ -81,14 +102,13 @@ int main() {
                 {
                     oldCars[k] = new oldCar(vin,make,model,category,price,year,mileage);
                     //oldCars[k]->addCar();
-                    k+=1;
                     //oldCars[k]->addCar();
                     //cout<<newCars[i]->getVin();
                     
                 }
             }
             
-    }
+        }
     
         if (user_input == 5){
             running = false;
@@ -112,6 +132,7 @@ int main() {
         delete oldCars[n];
         }
     }
+    
     
     return 0;
 }
