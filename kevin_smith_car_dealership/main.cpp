@@ -58,7 +58,12 @@ int main() {
             string dummy2;
             //cout<<"Enter the category you would like to search for (new or old)";
             //cin>>categoryinput;
-            cout<<"Enter make:"
+            cout<<"Enter make:";
+            cin>>dummy1;
+            cout<<"entermodel";
+            cin>>dummy2;
+            
+            car1.searchCar(dummy1,dummy2);
             
 //
         }

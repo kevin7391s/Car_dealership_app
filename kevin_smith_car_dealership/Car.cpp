@@ -86,40 +86,49 @@ void Car::loadCar(){
 }
 void Car::searchCar(string ma, string mo)
 {
-    string newcarText;
-    string newCarWords[7];
-    string seperatedwords[80];
-    fstream MyReadFile1("File.txt");
-    int stringloop1 = 0;
+    string carText3;
+    string newCarWords3[7];
+    string seperatedwords3[80];
+    fstream MyReadFile1("newCars.txt");
+    int stringloop3 = 0;
     
     while (! MyReadFile1.eof()) {
-        getline (MyReadFile1, newcarText);
-        newCarWords[stringloop1] = newcarText;
-        stringloop1 ++;
+        getline (MyReadFile1, carText3);
+        newCarWords3[stringloop3] = carText3;
+        stringloop3 ++;
     }
-    int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
+    int size = sizeof(newCarWords3)/sizeof(newCarWords3[0]);
     
     for(int arrnum = 0; arrnum<size;arrnum++)
     {
         //cout<<newCarWords[arrnum]<<endl;
-        istringstream ss(newCarWords[arrnum]);
+        istringstream ss(newCarWords3[arrnum]);
         string word;
-        bool isSearchTrue = false;
-        int wordcounter = 0;
+        bool isMakeTrue = false;
+        bool isModelTrue = false;
+        int wordcounter3 = 0;
         while(ss >> word)
         {
-            seperatedwords[wordcounter] = word;
-            wordcounter++;
-            if(ma == seperatedwords[wordcounter] && mo == seperatedwords[wordcounter])
+            seperatedwords3[wordcounter3] = word;
+            wordcounter3++;
+            if(ma == seperatedwords3[wordcounter3])
             {
-                cout<<newCarWords[arrnum]<<endl;
-                isSearchTrue = true;
+                //cout<<newCarWords3[arrnum]<<endl;
+                isMakeTrue = true;
+            }
+            if(mo == seperatedwords3[wordcounter3])
+            {
+                isModelTrue = true;
             }
         }
-        if(isSearchTrue != true)
+        if(isMakeTrue && isModelTrue){
+            cout<<newCarWords3[arrnum - 1]<<endl;
+        }
+        if(isMakeTrue != true || isModelTrue != true)
         {
             cout<<"No search found"<<endl;
         }
+        
     }
 }
 
@@ -131,6 +140,12 @@ Car::Car()
     Category = "NA";
     Price = 0.0;
     Year = 0;
+}
+
+Car::Car(string ma, string mo)
+{
+    ma = "null";
+    mo = "null";
 }
 
 Car::Car(string v, string ma, string mo, string c, float p, int y)

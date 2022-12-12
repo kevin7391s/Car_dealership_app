@@ -60,7 +60,9 @@ public:
     
     
     // constructors
+    
     Car();
+    Car(string ma,string mo);
     Car(string v, string ma, string mo, string c, float p, int y);
     
     ~Car();
