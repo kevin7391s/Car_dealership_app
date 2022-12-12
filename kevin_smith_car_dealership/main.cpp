@@ -88,18 +88,8 @@ int main() {
                     {
                         cout<<newCarWords[arrnum]<<endl;
                     }
-                   
                 }
-               
             }
-            int wordsize = sizeof(seperatedwords)/sizeof(seperatedwords[0]);
-//            for(int wordnum = 0; wordnum< wordsize; wordnum++)
-//            {
-//                //cout<<seperatedwords[wordnum]<<endl;
-//                if(newsearch == seperatedwords[wordnum]){
-//                    cout<<"YESSSSSS";
-//                }
-//            }
         }
         
         // add cars to file

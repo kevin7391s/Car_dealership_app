@@ -53,6 +53,7 @@ public:
     void getCarInfo();
     void virtual addCar();
     void virtual loadCar();
+    void virtual searchCar();
     
     
     // constructors
