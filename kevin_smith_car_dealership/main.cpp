@@ -22,7 +22,10 @@ int main() {
     
     Car car1;
     newCar newCar1;
+    newCar newCar2;
     oldCar oldCar1;
+    oldCar oldCar2;
+    
     
         
     bool running = true;
@@ -54,9 +57,29 @@ int main() {
         }
         if(user_input == 2){
             string categoryinput;
+            string newmake;
+            string newmodel;
             cout<<"Enter the category you would like to search for (new or old)";
             cin>>categoryinput;
+            cout<<"Enter make: ";
+            cin>>newmake;
+            cout<<"Enter model";
+            cin>>newmodel;
             
+            if(categoryinput == "new")
+            {
+                string newwarranty;
+                cout<<"Enter warranty: ";
+                cin>>newwarranty;
+                newCar2.searchCar(newmake, newmodel, newwarranty);
+            }
+            if(categoryinput == "old")
+            {
+                string newmileage;
+                cout<<"Enter mileage: ";
+                cin>>newmileage;
+                oldCar2.searchCar(newmake, newmodel, newmileage);
+            }
            
             
 
