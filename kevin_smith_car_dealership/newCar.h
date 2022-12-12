@@ -19,6 +19,7 @@ public:
     string getWarranty();
     void addCar();
     void loadCar();
+    void searchCar(string ma, string mo, string wa);
     
     newCar();
     newCar(string v, string ma, string mo, string c, float p, int y, string w);

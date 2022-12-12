@@ -54,6 +54,54 @@ void newCar::addCar()
     cout<<"Car added"<<endl;
 }
 
+void newCar::searchCar(string ma, string mo, string wa)
+{
+    string carText3;
+    string newCarWords3[7];
+    string seperatedwords3[80];
+    fstream MyReadFile1("newCars.txt");
+    int stringloop3 = 0;
+    
+    while (! MyReadFile1.eof()) {
+        getline (MyReadFile1, carText3);
+        newCarWords3[stringloop3] = carText3;
+        stringloop3 ++;
+    }
+    int size = sizeof(newCarWords3)/sizeof(newCarWords3[0]);
+    
+    for(int arrnum = 0; arrnum<size;arrnum++)
+    {
+        //cout<<newCarWords[arrnum]<<endl;
+        istringstream ss(newCarWords3[arrnum]);
+        string word;
+        bool isMakeTrue = false;
+        bool isModelTrue = false;
+        int wordcounter3 = 0;
+        while(ss >> word)
+        {
+            seperatedwords3[wordcounter3] = word;
+            wordcounter3++;
+            if(ma == seperatedwords3[wordcounter3])
+            {
+                //cout<<newCarWords3[arrnum]<<endl;
+                isMakeTrue = true;
+            }
+            if(mo == seperatedwords3[wordcounter3])
+            {
+                isModelTrue = true;
+            }
+        }
+        if(isMakeTrue && isModelTrue){
+            cout<<newCarWords3[arrnum - 1]<<endl;
+        }
+        if(isMakeTrue != true || isModelTrue != true)
+        {
+            cout<<"-"<<endl;
+        }
+        
+    }
+}
+
 
 newCar::newCar()
 {
