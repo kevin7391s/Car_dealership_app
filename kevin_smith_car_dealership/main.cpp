@@ -40,9 +40,10 @@ int main() {
         {
             
             string carText;
-            string newCarWords[100];
+            string newCarWords[5];
             fstream MyReadFile("newCars.txt");
             int stringloop = 0;
+            
             
             while (! MyReadFile.eof()) {
                 getline (MyReadFile, carText);
@@ -50,8 +51,11 @@ int main() {
                 //cout<<newCarWords[stringloop];
                 stringloop ++;
             }
-            cout<<newCarWords[0]<<endl;
-            cout<<newCarWords[1]<<endl;
+            int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
+            for(int arrnum = 0; arrnum<size;arrnum++)
+            {
+                cout<<newCarWords[arrnum]<<endl;
+            }
             
         }
         
