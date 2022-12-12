@@ -126,7 +126,7 @@ void Car::searchCar(string ma, string mo)
         }
         if(isMakeTrue != true || isModelTrue != true)
         {
-            cout<<"No search found"<<endl;
+            cout<<"-"<<endl;
         }
         
     }

@@ -29,6 +29,7 @@ void oldCar::addCar()
     MyFile << getYear()<<" ";
     MyFile << getMileage()<<" ";
     MyFile << ("\n");
+    cout<<"Car added"<<endl;
     
 }
 

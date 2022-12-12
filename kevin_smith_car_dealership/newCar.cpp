@@ -51,6 +51,7 @@ void newCar::addCar()
     MyFile << getYear()<<" ";
     MyFile << getWarranty()<<" ";
     MyFile << "\n";
+    cout<<"Car added"<<endl;
 }
 
 
