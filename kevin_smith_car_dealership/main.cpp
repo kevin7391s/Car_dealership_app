@@ -87,81 +87,25 @@ int main() {
             string sellCarCategory;
             string sellmake;
             string sellmodel;
+            string oldornew;
           
-            cout<<"Would you like to sell/lease a new car or an old car: ";
+            cout<<"Would you like to sell/lease: ";
             cin>>sellCarCategory;
-            cout<<"make of car: ";
+            cout<<"New car or old car?: ";
+            cin>>oldornew;
+            cout<<"Make of car: ";
             cin>>sellmake;
-            cout<<"model of car: ";
+            cout<<"Model of car: ";
             cin>>sellmodel;
             
+            if(oldornew == "new"){
+                newCar1.sellLeaseCar(sellmake, sellmodel, sellCarCategory);
+            }
+            if(oldornew == "old"){
+                oldCar1.sellLeaseCar(sellmake, sellmodel, sellCarCategory);
+            }
 
-            fstream MyReadFile5("newCars.txt");
-            ofstream MyFile5;
-            
-            ofstream MyFile6;
-            MyFile6.open("leaselist1.txt",  ofstream::app);
-            ofstream MyReopen;
-            string newcarText6;
-            string newCarWords6[7];
-            string newCarWords7[7];
-            string seperatedwords6[80];
-            int stringloop6 = 0;
-            
-            while (! MyReadFile5.eof()) {
-                getline (MyReadFile5, newcarText6);
-                newCarWords6[stringloop6] = newcarText6;
-                newCarWords7[stringloop6] = newCarWords6[stringloop6];
-                stringloop6 ++;
-            }
-            int size = sizeof(newCarWords6)/sizeof(newCarWords6[0]);
-            for(int arrnum6 = 0; arrnum6<size;arrnum6++)
-            {
-                //newCarWords[arrnum] = "null";
-                //cout<<newCarWords6[arrnum6]<<endl;
-                //cout<<newCarWords7[arrnum6]<<endl;
-                istringstream ss(newCarWords6[arrnum6]);
-                string word6;
-                bool maketrue= false;
-                bool modtrue = false;
-                int wordcounter6 = 0;
-                while(ss >> word6)
-                    
-                {
-                    seperatedwords6[wordcounter6] = word6;
-                    wordcounter6++;
-                    //cout<<seperatedwords6[wordcounter6]<<endl;
-                    if(sellmake == seperatedwords6[wordcounter6]){
-                        maketrue = true;
-                    }
-                    if(sellmodel == seperatedwords6[wordcounter6]){
-                        modtrue = true;
-                    }
-                    if(maketrue && modtrue){
-                        if(sellCarCategory == "lease"){
-                            MyFile6 << newCarWords7[arrnum6 - 1];
-                            MyFile6.close();
-                        }
-                        newCarWords7[arrnum6 -1] = sellCarCategory;
-                    }
-            }
-                
-            }
-            MyFile5.open("newCars.txt");
-            for(int arrnum7 = 0; arrnum7<size;arrnum7++)
-            {
-                //cout<<newCarWords7[arrnum7]<<endl;
-                if(arrnum7 == 0){
-                    MyFile5 << " ";
-                    MyFile5.close();
-                    MyReopen.open("newCars.txt", ofstream:: app);
-                }
 
-                MyReopen <<newCarWords7[arrnum7];
-                MyReopen << "\n";
-                   
-            }
-            
             
             
             }

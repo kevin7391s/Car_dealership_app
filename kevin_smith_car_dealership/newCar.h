@@ -20,6 +20,7 @@ public:
     void addCar();
     void loadCar();
     void searchCar(string ma, string mo, string wa);
+    void sellLeaseCar(string ma, string mo, string cat);
     
     newCar();
     newCar(string v, string ma, string mo, string c, float p, int y, string w);
