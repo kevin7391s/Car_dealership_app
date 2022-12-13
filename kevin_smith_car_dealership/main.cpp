@@ -87,37 +87,87 @@ int main() {
             string sellCarCategory;
             string sellmake;
             string sellmodel;
-            bool ismaketrue = false;
-            bool ismodeltrue = false;
+          
             cout<<"Would you like to sell/lease a new car or an old car: ";
             cin>>sellCarCategory;
             cout<<"make of car: ";
             cin>>sellmake;
             cout<<"model of car: ";
             cin>>sellmodel;
-            string carText5;
+            
 
-//            fstream MyReadFile5("newCars.txt");
-//            ofstream MyFile5;
-            //MyFile5.open("newCars.txt", ofstream::app);
-            string newcarText;
-            string newCarWords[7];
-            fstream MyReadFile1("newCars.txt");
-            int stringloop1 = 0;
+            fstream MyReadFile5("newCars.txt");
+            ofstream MyFile5;
+            MyFile5.open("newCars.txt", ofstream::app);
+            string newcarText6;
+            string newCarWords6[7];
+            string newCarWords7[7];
+            string seperatedwords6[80];
+            int stringloop6 = 0;
             
             cout<<"New Cars"<<endl;
             cout<<"-------------------------------------------------"<<endl;
-            while (! MyReadFile1.eof()) {
-                getline (MyReadFile1, newcarText);
-                newCarWords[stringloop1] = newcarText;
-                stringloop1 ++;
+            while (! MyReadFile5.eof()) {
+                getline (MyReadFile5, newcarText6);
+                newCarWords6[stringloop6] = newcarText6;
+                newCarWords7[stringloop6] = newCarWords6[stringloop6];
+                stringloop6 ++;
             }
-            int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
-            for(int arrnum = 0; arrnum<size;arrnum++)
+            int size = sizeof(newCarWords6)/sizeof(newCarWords6[0]);
+            for(int arrnum6 = 0; arrnum6<size;arrnum6++)
             {
-                cout<<newCarWords[arrnum]<<endl;
+                //newCarWords[arrnum] = "null";
+                cout<<newCarWords6[arrnum6]<<endl;
+                cout<<newCarWords7[arrnum6]<<endl;
+                istringstream ss(newCarWords6[arrnum6]);
+                string word6;
+                bool maketrue= false;
+                bool modtrue = false;
+                int wordcounter6 = 0;
+                while(ss >> word6)
+                {
+                    seperatedwords6[wordcounter6] = word6;
+                    wordcounter6++;
+                    cout<<seperatedwords6[wordcounter6]<<endl;
+                    if(sellmake == seperatedwords6[wordcounter6]){
+                        maketrue = true;
+                    }
+                    if(sellmodel == seperatedwords6[wordcounter6]){
+                        modtrue = true;
+                    }
+                    if(maketrue && modtrue){
+                        newCarWords7[arrnum6] = sellCarCategory;
+                    }
             }
-        
+                
+            }
+            for(int arrnum7 = 0; arrnum7<size;arrnum7++)
+            {
+                cout<<newCarWords7[arrnum7]<<endl;
+            }
+            
+            
+//            string newCarWords5[7];
+//            int bigcount = 0;
+//            string seperatedwords5[100];
+//            int stringloop5 = 0;
+//            while (! MyReadFile5.eof()) {
+//                           getline (MyReadFile5, carText5);
+//                           newCarWords5[stringloop5] = carText5;
+//                           stringloop5 ++;
+//                       }
+//                       int size1 = sizeof(newCarWords5)/sizeof(newCarWords5[0]);
+//
+//            for(int arrnum5 = 0; arrnum5<size1;arrnum5++)
+//                        {
+//                            istringstream ss(newCarWords5[arrnum5]);
+//                            string word5;
+//
+//                            //cout<<newCarWords5[arrnum5];
+//                            seperatedwords5[bigcount] = newCarWords5[arrnum5];
+//                            cout<<seperatedwords5[1];
+//                            bigcount ++;
+//                        }
             
 //            int stringloop5 = 0;
 //            int bigcount = 0;
