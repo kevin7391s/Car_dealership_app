@@ -132,6 +132,74 @@ void Car::searchCar(string ma, string mo)
     }
 }
 
+void Car::sellLeaseCar(string ma, string mo, string cat){
+    fstream MyReadFile5("newFile.txt");
+    ofstream MyFile5;
+    
+    ofstream MyFile6;
+    MyFile6.open("leaselist1.txt",  ofstream::app);
+    ofstream MyReopen;
+    string newcarText6;
+    string newCarWords6[7];
+    string newCarWords7[7];
+    string seperatedwords6[80];
+    int stringloop6 = 0;
+    
+    while (! MyReadFile5.eof()) {
+        getline (MyReadFile5, newcarText6);
+        newCarWords6[stringloop6] = newcarText6;
+        newCarWords7[stringloop6] = newCarWords6[stringloop6];
+        stringloop6 ++;
+    }
+    int size = sizeof(newCarWords6)/sizeof(newCarWords6[0]);
+    for(int arrnum6 = 0; arrnum6<size;arrnum6++)
+    {
+        //newCarWords[arrnum] = "null";
+        //cout<<newCarWords6[arrnum6]<<endl;
+        //cout<<newCarWords7[arrnum6]<<endl;
+        istringstream ss(newCarWords6[arrnum6]);
+        string word6;
+        bool maketrue= false;
+        bool modtrue = false;
+        int wordcounter6 = 0;
+        while(ss >> word6)
+            
+        {
+            seperatedwords6[wordcounter6] = word6;
+            wordcounter6++;
+            //cout<<seperatedwords6[wordcounter6]<<endl;
+            if(ma == seperatedwords6[wordcounter6]){
+                maketrue = true;
+            }
+            if(mo == seperatedwords6[wordcounter6]){
+                modtrue = true;
+            }
+            if(maketrue && modtrue){
+                if(cat == "lease"){
+                    MyFile6 << newCarWords7[arrnum6 - 1];
+                    MyFile6.close();
+                }
+                newCarWords7[arrnum6 -1] = cat;
+            }
+    }
+        
+    }
+    MyFile5.open("newCars.txt");
+    for(int arrnum7 = 0; arrnum7<size;arrnum7++)
+    {
+        //cout<<newCarWords7[arrnum7]<<endl;
+        if(arrnum7 == 0){
+            MyFile5 << " ";
+            MyFile5.close();
+            MyReopen.open("newCars.txt", ofstream:: app);
+        }
+
+        MyReopen <<newCarWords7[arrnum7];
+        MyReopen << "\n";
+           
+    }
+}
+
 Car::Car()
 {
     Vin = "NA";

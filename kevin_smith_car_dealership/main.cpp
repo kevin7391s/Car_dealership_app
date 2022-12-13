@@ -108,8 +108,6 @@ int main() {
             string seperatedwords6[80];
             int stringloop6 = 0;
             
-            cout<<"New Cars"<<endl;
-            cout<<"-------------------------------------------------"<<endl;
             while (! MyReadFile5.eof()) {
                 getline (MyReadFile5, newcarText6);
                 newCarWords6[stringloop6] = newcarText6;
