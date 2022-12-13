@@ -107,6 +107,7 @@ int main() {
             }
         }
         
+        // return leased car
         if(user_input == 4)
         {
             string makereturnedcar;
@@ -117,78 +118,7 @@ int main() {
             cin>>modelreturnedcar;
             
             car2.returnLeasedCar(makereturnedcar, modelreturnedcar);
-            
-//            fstream MyoldReadFile6("leaselist1.txt");
-//            ofstream MyFile8;
-//
-//            ofstream MyFile9;
-//            MyFile9.open("oldCar.txt",  ofstream::app);
-//            ofstream MyleaseReopen;
-//            string newcarText9;
-//            string newCarWords8[7];
-//            string newCarWords9[7];
-//            string seperatedwords9[80];
-//            int stringloop9 = 0;
-//
-//            while (! MyoldReadFile6.eof()) {
-//                getline (MyoldReadFile6, newcarText9);
-//                newCarWords8[stringloop9] = newcarText9;
-//                newCarWords9[stringloop9] = newCarWords8[stringloop9];
-//                stringloop9 ++;
-//            }
-//            int size9 = sizeof(newCarWords9)/sizeof(newCarWords9[0]);
-//            for(int arrnum9 = 0; arrnum9<size9;arrnum9++)
-//            {
-//                cout<<newCarWords8[arrnum9]<<endl;
-//                istringstream ss(newCarWords8[arrnum9]);
-//                string word9;
-//                bool maketrue9= false;
-//                bool modtrue9 = false;
-//                int wordcounter9 = 0;
-//                while(ss >> word9)
-//
-//                {
-//                    seperatedwords9[wordcounter9] = word9;
-//                    cout<<seperatedwords9[wordcounter9]<<endl;
-//                    wordcounter9++;
-//                    //cout<<seperatedwords6[wordcounter6]<<endl;
-//                    if(makereturnedcar == seperatedwords9[wordcounter9]){
-//                        maketrue9 = true;
-//                    }
-//                    if(modelreturnedcar == seperatedwords9[wordcounter9]){
-//                        modtrue9 = true;
-//                    }
-//                    if(maketrue9 && modtrue9){
-//
-//                        MyFile9 << newCarWords9[arrnum9 - 1];
-//
-//                        MyFile9.close();
-//                        newCarWords9[arrnum9 -1] = "returned";
-//
-//                    }
-//            }
-//
-//            }
-//            MyFile8.open("leaselist1.txt");
-//            for(int arrnum8 = 0; arrnum8<size9;arrnum8++)
-//            {
-//                //cout<<newCarWords7[arrnum7]<<endl;
-//                if(arrnum8 == 0){
-//                    MyFile8 << " ";
-//                    MyFile8.close();
-//                    MyleaseReopen.open("leaselist1.txt", ofstream:: app);
-//                }
-//
-//                MyleaseReopen <<newCarWords9[arrnum8];
-//                MyleaseReopen << "\n";
-//
-//            }
-//
-            
         }
-        
-            
-        
         
         // add cars to file
         if(user_input == 5)
@@ -253,9 +183,6 @@ int main() {
         
         
     }
-    
-
-    
     
     return 0;
 }
