@@ -34,23 +34,24 @@ void oldCar::addCar()
 }
 
 void oldCar::loadCar(){
-    string carText2;
-    string oldCarWords[7];
-    fstream MyReadFile("oldCar.txt");
-    int stringloop = 0;
+    string carText22;
+    string oldCarWords22[7];
+    fstream MyReadFile22("oldCar.txt");
+    int stringloop22 = 0;
     
     cout<<"Old Cars"<<endl;
     cout<<"-------------------------------------------------"<<endl;
-    while (! MyReadFile.eof()) {
-        getline (MyReadFile, carText2);
-        oldCarWords[stringloop] = carText2;
-        stringloop ++;
+    while (! MyReadFile22.eof()) {
+        getline (MyReadFile22, carText22);
+        oldCarWords22[stringloop22] = carText22;
+        stringloop22 ++;
     }
-    int size = sizeof(oldCarWords)/sizeof(oldCarWords[0]);
+    int size = sizeof(oldCarWords22)/sizeof(oldCarWords22[0]);
     for(int arrnum1 = 0; arrnum1<size;arrnum1++)
     {
-        cout<<oldCarWords[arrnum1]<<endl;
+        cout<<oldCarWords22[arrnum1]<<endl;
     }
+    MyReadFile22.close();
 }
 
 void oldCar::searchCar(string ma, string mo, string mi)

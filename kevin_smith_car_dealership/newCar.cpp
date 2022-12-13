@@ -19,23 +19,24 @@ string newCar::getWarranty()
 
 void newCar::loadCar()
 {
-    string newcarText;
-    string newCarWords[7];
-    fstream MyReadFile1("newCars.txt");
-    int stringloop1 = 0;
+    string newcarText10;
+    string newCarWords10[7];
+    fstream MyReadFile10("newCars.txt");
+    int stringloop10 = 0;
     
     cout<<"New Cars"<<endl;
     cout<<"-------------------------------------------------"<<endl;
-    while (! MyReadFile1.eof()) {
-        getline (MyReadFile1, newcarText);
-        newCarWords[stringloop1] = newcarText;
-        stringloop1 ++;
+    while (! MyReadFile10.eof()) {
+        getline (MyReadFile10, newcarText10);
+        newCarWords10[stringloop10] = newcarText10;
+        stringloop10 ++;
     }
-    int size = sizeof(newCarWords)/sizeof(newCarWords[0]);
+    int size = sizeof(newCarWords10)/sizeof(newCarWords10[0]);
     for(int arrnum = 0; arrnum<size;arrnum++)
     {
-        cout<<newCarWords[arrnum]<<endl;
+        cout<<newCarWords10[arrnum]<<endl;
     }
+    MyReadFile10.close();
 }
 
 // function to add car to car list

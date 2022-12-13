@@ -31,8 +31,6 @@ private:
     //Car *carList;
     int count;
     
-    
-    
 
 public:
     // setters
