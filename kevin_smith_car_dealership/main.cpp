@@ -98,7 +98,10 @@ int main() {
 
             fstream MyReadFile5("newCars.txt");
             ofstream MyFile5;
-            MyFile5.open("newCars.txt", ofstream::app);
+            
+            ofstream MyFile6;
+            MyFile6.open("leaselist.txt",  ofstream::app);
+            ofstream MyReopen;
             string newcarText6;
             string newCarWords6[7];
             string newCarWords7[7];
@@ -117,18 +120,19 @@ int main() {
             for(int arrnum6 = 0; arrnum6<size;arrnum6++)
             {
                 //newCarWords[arrnum] = "null";
-                cout<<newCarWords6[arrnum6]<<endl;
-                cout<<newCarWords7[arrnum6]<<endl;
+                //cout<<newCarWords6[arrnum6]<<endl;
+                //cout<<newCarWords7[arrnum6]<<endl;
                 istringstream ss(newCarWords6[arrnum6]);
                 string word6;
                 bool maketrue= false;
                 bool modtrue = false;
                 int wordcounter6 = 0;
                 while(ss >> word6)
+                    
                 {
                     seperatedwords6[wordcounter6] = word6;
                     wordcounter6++;
-                    cout<<seperatedwords6[wordcounter6]<<endl;
+                    //cout<<seperatedwords6[wordcounter6]<<endl;
                     if(sellmake == seperatedwords6[wordcounter6]){
                         maketrue = true;
                     }
@@ -136,79 +140,27 @@ int main() {
                         modtrue = true;
                     }
                     if(maketrue && modtrue){
-                        newCarWords7[arrnum6] = sellCarCategory;
+                        newCarWords7[arrnum6 -1] = sellCarCategory;
                     }
             }
                 
             }
+            MyFile5.open("newCars.txt");
             for(int arrnum7 = 0; arrnum7<size;arrnum7++)
             {
                 cout<<newCarWords7[arrnum7]<<endl;
+                if(arrnum7 == 0){
+                    MyFile5 << " ";
+                    MyFile5.close();
+                    MyReopen.open("newCars.txt", ofstream:: app);
+                }
+
+                MyReopen <<newCarWords7[arrnum7];
+                MyReopen << "\n";
+                   
             }
             
             
-//            string newCarWords5[7];
-//            int bigcount = 0;
-//            string seperatedwords5[100];
-//            int stringloop5 = 0;
-//            while (! MyReadFile5.eof()) {
-//                           getline (MyReadFile5, carText5);
-//                           newCarWords5[stringloop5] = carText5;
-//                           stringloop5 ++;
-//                       }
-//                       int size1 = sizeof(newCarWords5)/sizeof(newCarWords5[0]);
-//
-//            for(int arrnum5 = 0; arrnum5<size1;arrnum5++)
-//                        {
-//                            istringstream ss(newCarWords5[arrnum5]);
-//                            string word5;
-//
-//                            //cout<<newCarWords5[arrnum5];
-//                            seperatedwords5[bigcount] = newCarWords5[arrnum5];
-//                            cout<<seperatedwords5[1];
-//                            bigcount ++;
-//                        }
-            
-//            int stringloop5 = 0;
-//            int bigcount = 0;
-//            while (! MyReadFile5.eof()) {
-//                getline (MyReadFile5, carText5);
-//                newCarWords5[stringloop5] = carText5;
-//                stringloop5 ++;
-//            }
-//            int size = sizeof(newCarWords5)/sizeof(newCarWords5[0]);
-//
-//            for(int arrnum5 = 0; arrnum5<size;arrnum5++)
-//            {
-//                //copy array
-//                secSepWords[arrnum5] = newCarWords5[arrnum5];
-//                cout<<secSepWords[arrnum5]<<endl;
-//                istringstream ss(newCarWords5[arrnum5]);
-//                string word5;
-//
-//                //cout<<newCarWords5[arrnum5];
-//                seperatedwords5[bigcount] = newCarWords5[arrnum5];
-//                //cout<<seperatedwords5[1];
-//                if(sellmake == seperatedwords5[1] && sellmodel == seperatedwords5[2]){
-//                    secSepWords[arrnum5] = sellCarCategory;
-//                    secSepWords[arrnum5] = "null";
-//                    cout<<"HERE";
-//                    cout<<secSepWords[0];
-//                    //cout<<secSepWords[arrnum5]<<endl;
-//                    break;
-//                }
-//                for(int laz = 0; laz<5; laz++){
-//                    cout<<"hello: "<<secSepWords[laz]<<endl;
-//                }
-//
-//                int wordcounter5 = 0;
-//                while(ss >> word5)
-//                {
-//                    seperatedwords5[wordcounter5] = word5;
-//                    //cout<<seperatedwords5[wordcounter5]<<endl;
-//                    wordcounter5++;
-//
-                
             
             }
             
