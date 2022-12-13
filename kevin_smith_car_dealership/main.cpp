@@ -100,7 +100,7 @@ int main() {
             ofstream MyFile5;
             
             ofstream MyFile6;
-            MyFile6.open("leaselist.txt",  ofstream::app);
+            MyFile6.open("leaselist1.txt",  ofstream::app);
             ofstream MyReopen;
             string newcarText6;
             string newCarWords6[7];
@@ -140,6 +140,10 @@ int main() {
                         modtrue = true;
                     }
                     if(maketrue && modtrue){
+                        if(sellCarCategory == "lease"){
+                            MyFile6 << newCarWords7[arrnum6 - 1];
+                            MyFile6.close();
+                        }
                         newCarWords7[arrnum6 -1] = sellCarCategory;
                     }
             }
@@ -148,7 +152,7 @@ int main() {
             MyFile5.open("newCars.txt");
             for(int arrnum7 = 0; arrnum7<size;arrnum7++)
             {
-                cout<<newCarWords7[arrnum7]<<endl;
+                //cout<<newCarWords7[arrnum7]<<endl;
                 if(arrnum7 == 0){
                     MyFile5 << " ";
                     MyFile5.close();
