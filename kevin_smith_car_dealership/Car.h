@@ -58,6 +58,7 @@ public:
     void virtual loadCar();
     void virtual searchCar(string ma,string mo);
     void virtual sellLeaseCar(string ma, string mo, string cat);
+    void returnLeasedCar(string ma, string mo);
     
     
     // constructors
