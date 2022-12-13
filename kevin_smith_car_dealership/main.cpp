@@ -97,6 +97,7 @@ int main() {
             cin>>sellmodel;
             string carText5;
             string newCarWords5[7];
+            string newCarWordslist[7];
             string seperatedwords5[100];
             fstream MyReadFile5("newCars.txt");
             ofstream MyFile5;
@@ -117,32 +118,49 @@ int main() {
                 string word5;
                 
                 int wordcounter5 = 0;
-                while(ss >> word5)
-                {
-                    seperatedwords5[wordcounter5] = word5;
+                //int secwordcounter5 = 1;
+                cout<<newCarWords5[arrnum5]<<endl;
+                //while(ss >> word5)
+                //{
+                    //seperatedwords5[wordcounter5] = word5;
                     
-                    //cout<<seperatedwords5[wordcounter5];
-                    if(sellmake == seperatedwords5[wordcounter5])
-                    {
-                        //cout<<newCarWords3[arrnum]<<endl;
-                        ismaketrue = true;
-                    }
-                    if(sellmodel == seperatedwords5[wordcounter5])
-                    {
-                        ismodeltrue = true;
-                    }
-                    if(ismaketrue && ismodeltrue)
-                    {
-                        cout<<newCarWords5[arrnum5];
-                        newCarWords5[arrnum5] = sellCarCategory;
-                        MyFile5 <<newCarWords5[arrnum5];
-                    }
-                    wordcounter5++;
+                    //cout<<seperatedwords5[wordcounter5]<<endl;
+                    //wordcounter5++;
+                    
+                    
+//                    if(sellmake == seperatedwords5[wordcounter5])
+//                    {
+//                        ismaketrue = true;
+//                    }
+//                    if(sellmake == seperatedwords5[wordcounter5])
+//                    {
+//                        ismodeltrue = true;
+//                    }
+//                    if(sellmake == seperatedwords5[wordcounter5] && sellmodel == seperatedwords5[wordcounter5])
+//                    {
+//                        //ismodeltrue = true;
+//                        cout<<newCarWords5[arrnum5];
+//                        cout<<"SEPERATE"<<seperatedwords5[wordcounter5];
+//                        newCarWords5[arrnum5] = sellCarCategory;
+//                        for(int z = 0; z<size;z++){
+//                            MyFile5 << newCarWords5[z];
+//
+//                }
+//                    if(ismaketrue && ismodeltrue)
+//                    {
+//                      cout<<newCarWords5[arrnum5];
+//                        cout<<"SEPERATE"<<seperatedwords5[wordcounter5];
+//                        newCarWords5[arrnum5] = sellCarCategory;
+//                        for(int z = 0; z<size;z++){
+//                        MyFile5 << newCarWords5[z];
+//                        }
+//                    }
+                    
                 }
-               
+                
+            MyFile5.close();
             }
-            MyReadFile5.close();
-        }
+        
         
         // add cars to file
         if(user_input == 5)
