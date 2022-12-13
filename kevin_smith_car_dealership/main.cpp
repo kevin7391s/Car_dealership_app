@@ -27,7 +27,6 @@ int main() {
     oldCar oldCar2;
     
     
-        
     bool running = true;
     int newcounter = 0;
     int oldcounter = 0;
@@ -80,9 +79,69 @@ int main() {
                 cin>>newmileage;
                 oldCar2.searchCar(newmake, newmodel, newmileage);
             }
-           
+        }
+        
+        if(user_input == 3)
+        {
+            //need to remove car from list
+            string sellCarCategory;
+            string sellmake;
+            string sellmodel;
+            bool ismaketrue = false;
+            bool ismodeltrue = false;
+            cout<<"Would you like to sell/lease a new car or an old car: ";
+            cin>>sellCarCategory;
+            cout<<"make of car: ";
+            cin>>sellmake;
+            cout<<"model of car: ";
+            cin>>sellmodel;
+            string carText5;
+            string newCarWords5[7];
+            string seperatedwords5[100];
+            fstream MyReadFile5("newCars.txt");
+            ofstream MyFile5;
+            MyFile5.open("newCars.txt", ofstream::app);
+            int stringloop5 = 0;
             
-
+            while (! MyReadFile5.eof()) {
+                getline (MyReadFile5, carText5);
+                newCarWords5[stringloop5] = carText5;
+                stringloop5 ++;
+            }
+            int size = sizeof(newCarWords5)/sizeof(newCarWords5[0]);
+            
+            for(int arrnum5 = 0; arrnum5<size;arrnum5++)
+            {
+                //cout<<newCarWords[arrnum]<<endl;
+                istringstream ss(newCarWords5[arrnum5]);
+                string word5;
+                
+                int wordcounter5 = 0;
+                while(ss >> word5)
+                {
+                    seperatedwords5[wordcounter5] = word5;
+                    
+                    //cout<<seperatedwords5[wordcounter5];
+                    if(sellmake == seperatedwords5[wordcounter5])
+                    {
+                        //cout<<newCarWords3[arrnum]<<endl;
+                        ismaketrue = true;
+                    }
+                    if(sellmodel == seperatedwords5[wordcounter5])
+                    {
+                        ismodeltrue = true;
+                    }
+                    if(ismaketrue && ismodeltrue)
+                    {
+                        cout<<newCarWords5[arrnum5];
+                        newCarWords5[arrnum5] = sellCarCategory;
+                        MyFile5 <<newCarWords5[arrnum5];
+                    }
+                    wordcounter5++;
+                }
+               
+            }
+            MyReadFile5.close();
         }
         
         // add cars to file
