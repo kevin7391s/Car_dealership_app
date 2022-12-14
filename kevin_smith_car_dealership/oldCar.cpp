@@ -105,6 +105,7 @@ void oldCar::searchCar(string ma, string mo, string mi)
         }
         
     }
+    MyReadFile4.close();
 }
 void oldCar::sellLeaseCar(string ma,string mo, string cat)
 {

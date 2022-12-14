@@ -24,6 +24,7 @@ void newCar::loadCar()
     fstream MyReadFile10("newCars.txt");
     int stringloop10 = 0;
     
+    // used to print each line to show lists of cars
     cout<<"New Cars"<<endl;
     cout<<"-------------------------------------------------"<<endl;
     while (! MyReadFile10.eof()) {
@@ -57,55 +58,56 @@ void newCar::addCar()
 
 void newCar::searchCar(string ma, string mo, string wa)
 {
-    string carText3;
-    string newCarWords3[7];
-    string seperatedwords3[80];
-    fstream MyReadFile1("newCars.txt");
-    int stringloop3 = 0;
+    string carText33;
+    string newCarWords33[7];
+    string seperatedwords33[80];
+    fstream MyReadFile33("newCars.txt");
+    int stringloop33 = 0;
     
-    while (! MyReadFile1.eof()) {
-        getline (MyReadFile1, carText3);
-        newCarWords3[stringloop3] = carText3;
-        stringloop3 ++;
+    while (! MyReadFile33.eof()) {
+        getline (MyReadFile33, carText33);
+        newCarWords33[stringloop33] = carText33;
+        stringloop33 ++;
     }
-    int size = sizeof(newCarWords3)/sizeof(newCarWords3[0]);
+    int size = sizeof(newCarWords33)/sizeof(newCarWords33[0]);
     
-    for(int arrnum = 0; arrnum<size;arrnum++)
+    for(int arrnum33 = 0; arrnum33<size;arrnum33++)
     {
         //cout<<newCarWords[arrnum]<<endl;
-        istringstream ss(newCarWords3[arrnum]);
-        string word;
-        bool isMakeTrue = false;
-        bool isModelTrue = false;
-        bool isWarrantyTrue = false;
-        int wordcounter3 = 0;
-        while(ss >> word)
+        istringstream ss(newCarWords33[arrnum33]);
+        string word33;
+        bool isMakeTrue33 = false;
+        bool isModelTrue33 = false;
+        bool isWarrantyTrue33 = false;
+        int wordcounter33 = 0;
+        while(ss >> word33)
         {
-            seperatedwords3[wordcounter3] = word;
-            wordcounter3++;
-            if(ma == seperatedwords3[wordcounter3])
+            seperatedwords33[wordcounter33] = word33;
+            wordcounter33++;
+            if(ma == seperatedwords33[wordcounter33])
             {
                 //cout<<newCarWords3[arrnum]<<endl;
-                isMakeTrue = true;
+                isMakeTrue33 = true;
             }
-            if(mo == seperatedwords3[wordcounter3])
+            if(mo == seperatedwords33[wordcounter33])
             {
-                isModelTrue = true;
+                isModelTrue33 = true;
             }
-            if(wa == seperatedwords3[wordcounter3])
+            if(wa == seperatedwords33[wordcounter33])
             {
-                isWarrantyTrue = true;
+                isWarrantyTrue33 = true;
             }
         }
-        if(isMakeTrue && isModelTrue && isWarrantyTrue){
-            cout<<newCarWords3[arrnum - 1]<<endl;
+        if(isMakeTrue33 && isModelTrue33 && isWarrantyTrue33){
+            cout<<newCarWords33[arrnum33 - 1]<<endl;
         }
-        if(isMakeTrue != true || isModelTrue != true || isWarrantyTrue != true)
+        if(isMakeTrue33 != true || isModelTrue33 != true || isWarrantyTrue33 != true)
         {
             cout<<"-"<<endl;
         }
         
     }
+
 }
 
 void newCar::sellLeaseCar(string ma, string mo, string cat){
@@ -174,6 +176,7 @@ void newCar::sellLeaseCar(string ma, string mo, string cat){
            
     }
     MyReopen.close();
+    MyReadFile5.close();
 }
 
 

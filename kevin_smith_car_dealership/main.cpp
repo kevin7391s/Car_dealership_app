@@ -17,9 +17,11 @@ using namespace std;
 
 int main() {
  
+    // create newCar and oldCar array to that will be used to store data in file
     newCar* newCars[5];
     oldCar* oldCars[5];
     
+    // create objects used to call functions
     Car car1;
     Car car2;
     newCar newCar1;
@@ -27,13 +29,15 @@ int main() {
     oldCar oldCar1;
     oldCar oldCar2;
     
-    
+    // variables used in main
     bool running = true;
     int newcounter = 0;
     int oldcounter = 0;
     int i = 0;
     int k = 0;
     int user_input;
+    
+    // while loop that continously runs until user_input == 6
     while (running)
     {
         
@@ -184,5 +188,6 @@ int main() {
         
     }
     
+
     return 0;
 }
